@@ -1,14 +1,7 @@
-from appJar import gui #uncomment this for 100% submission
-
-
-#Sample Team Project Extra Credit -- Shopping Application 110%
-#Make sure to include the files for your team csv and .gif in your submission!
-#include the app.Jar folder in the folder where your team files are stored
-
-#Function to greet the user and ask for a category
+from appJar import gui 
 
 import pandas
-import tkinter #uncomment this for 100% submission
+import tkinter
 cart = ""
 total = 0
 bye = []
@@ -32,8 +25,6 @@ def greet_user(greeting,sentinel,categoryq,readyq):
     else:
         print('Sorry, we do not carry that category.  See you next time!')
 
-
-#Function to ask user to pick a Main
 def tops(greeting,selection,pickq):
     print(greeting)
     for item in selection:
@@ -52,8 +43,6 @@ def tops(greeting,selection,pickq):
     else:
         closing("Cardigan",20,"Enjoy your Cardigan!" )
     
-
-#Function to ask user to pick a Side
 def pants(greeting,selection,pickq):
     print(greeting)
     for item in selection:
@@ -72,7 +61,6 @@ def pants(greeting,selection,pickq):
     else:
         closing("Shorts",40,"Enjoy your Shorts!" )
         
-#Function to ask user to pick a Dessert
 def shoes(greeting,selection,pickq):
     print(greeting)
     for item in selection:
@@ -91,7 +79,6 @@ def shoes(greeting,selection,pickq):
     else:
         closing("Loafer",110,"Enjoy your Loafer!")
         
-#Function to give user total price of purchase
 def closing(pickeditem,price,goodbye):
     global cart
     global total
@@ -117,24 +104,6 @@ def closing(pickeditem,price,goodbye):
         for b in bye:
             print(b)
 
-
-    
-#make the code on line 119 a comment (use #) for 100% submission
-        
-#greet_user("Welcome to our store", "n", "What category would you like to browse (Tops, Pants, Shoes)? ", "Ready to browse (y/n)? ")
-
-
-
-#Uncomment this section for 100% submission (remove the three quote marks from lines 123 and 183)
-#This is the function that determines code executed when each button is pressed
-
-#Each teammember should replace the Button name assigned to btn (see line 91 for an example) 
-#in the if-elif statements below with
-#a short title for his/her function.  Then place a call to the
-#corresponding function on the next line
-
-
-
 def press(btn):
     if btn == "Exit":
         app.stop()
@@ -151,29 +120,13 @@ def press(btn):
     else:
         print('Pick a valid option')
 
-
-#The code below defines the gui, adding buttons, labels, images, color, etc.
-#
-#Make changes to the title (line 163), image (line 169), and button
-#names (lines 175 to 180)
-
-#Edit 500x500 in line 159 to make your window bigger or smaller
-
 app=gui("Main Menu","500x500")
-
-#Replace "Welcome to Our Store's Main Menu" with your team's greeting in line 117
 
 app.addLabel("title", "Welcome to Threads's Main Menu")
 app.setLabelBg("title", "lavender")
 
-#Find your team gif image, save to your project code folder, and replace k.gif
-#with the image file name in line 166
-
 app.addImage("decor","Threadslogo.gif")
 app.setFont(18)
-
-#change the first parameter of the addButton method in lines 172 to 177 with names aligning with your team functions
-#make sure they match the Button names in the press function above
 
 app.addButton("Hello", press)
 app.addButton("Tops", press)
@@ -181,6 +134,6 @@ app.addButton("Pants", press)
 app.addButton("Shoes", press)
 app.addButton("Close", press)
 app.addButton("Exit",press)
-app.go() #displays the gui
+app.go()
 
 
